@@ -1,0 +1,91 @@
+0. Criar pasta e clonar repositorio remoto
+
+1. verificar se ha Node instalado
+
+2. Instalar o Express
+
+- framework para APIs em Node 
+
+3. instalar o EXPRESS: npm install -g express-generator
+4. express --no-view NOME_PASTA
+
+---------------- BAIXAR O SEQUELIZE -------------------------
+
+5. baixar o sequelize: npm install sequelize sequelize-cli
+6. npx sequelize-cli init
+
+npm install express-generator sequelize sequelize-cli
+
+---------------- BAIXAR O SEQUELIZE -------------------------
+
+
+
+--------------------------- AULA 26/03/24 -----------------------------
+
+1. npm install express-generator sequelize sequelize-cli
+2. express --no-view sistema
+3. npx sequelize-cli init
+
+--------------------------- AULA 26/03/24 -----------------------------
+
+
+--------------------- CRIAR BANCO DE DADOS ----------------------------
+
+No mysql: 
+
+create database sistemaDB;
+
+use sistemaDB;
+
+create user 'devuser'@'localhost'identified by 'dev@123';
+
+grant all privileges on *.* to 'devuser'@'localhost' with grant option;
+
+flush privileges;
+
+*******************************************************************
+
+no arquivo "config.json":
+
+"development": {
+    "username": "devuser", //nome do user criado
+    "password": "dev@123", //senha
+    "database": "sistemaDB", //nome do BD
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
+---------------------CRIAR BANCO DE DADOS-------------------------
+
+
+
+---------------------BAIXAR O DRIVE DO mysql-----------------------
+
+- npm install mysql2
+- npm audit fix --force
+
+---------------------BAIXAR O DRIVE DO mysql-----------------------
+
+---------------------migration-----------------------
+
+em produção precisa ser false
+
+migration_config = {
+    create: true,
+    alter: true,
+};
+
+BD fica na pasta models
+---------------------migration-----------------------
+
+- model: só olha pro banco
+- service: logica de negocios, fala com a model(BD)
+- controller: recebe dados do front
+
+isolar a responsabilidade.
+
+[] model
+[] service
+[] controller
+[] Autenticador
+[] API
